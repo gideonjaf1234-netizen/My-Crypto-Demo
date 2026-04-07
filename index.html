@@ -135,13 +135,32 @@
 
 </body><script>
     const tele = window.Telegram.WebApp;
-    tele.ready(); // Tells Telegram the app is loaded
-    tele.expand(); // Makes the app open in full screen immediately
+    tele.ready();
+    tele.expand();
 
-    // Bonus: Show the user's real name from Telegram
-    const userName = tele.initDataUnsafe?.user?.first_name || "Guest";
-    document.querySelector('.font-bold').innerText = userName;
+    // 1. Dynamic Greeting
+    const user = tele.initDataUnsafe?.user;
+    if (user) {
+        document.querySelector('.font-bold').innerText = `${user.first_name} ${user.last_name || ''}`;
+        // Change the profile initial
+        document.querySelector('.w-10.h-10').innerText = user.first_name[0].toUpperCase();
+    }
+
+    // 2. Functional Copy Address
+    function copyAddress() {
+        const dummyAddress = "EQC...TON_ADDRESS_XYZ"; // Demo address
+        navigator.clipboard.writeText(dummyAddress);
+        tele.showScanQrPopup({ text: "Demo: Address Copied!" }); 
+        // Haptic feedback (vibration) makes it feel premium
+        tele.HapticFeedback.notificationOccurred('success');
+    }
+
+    // 3. Simple Tab Switcher (Show/Hide Tasks)
+    function showTasks() {
+        alert("Task Module: You can sell this as a separate feature for ₦150k!");
+    }
 </script>
+  
   
                                                                     </html>
                                                                     
