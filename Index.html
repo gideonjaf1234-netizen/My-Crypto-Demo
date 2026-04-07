@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="https://telegram.org/js/telegram-web-app.js"></script>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TON Pro Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: var(--tg-theme-bg-color, #0f172a);
+            color: var(--tg-theme-text-color, #ffffff);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        .card {
+            background: var(--tg-theme-secondary-bg-color, #1e293b);
+            border-radius: 16px;
+        }
+        .btn-primary {
+            background-color: var(--tg-theme-button-color, #0088cc);
+            color: var(--tg-theme-button-text-color, #ffffff);
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="p-4 pb-24">
+
+    <div class="flex justify-between items-center mb-6">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center font-bold">G</div>
+            <div>
+                <p class="text-xs opacity-60">Welcome back,</p>
+                <p class="font-bold">Gideon Adeyi</p>
+            </div>
+        </div>
+        <div class="glass px-3 py-1 rounded-full text-xs border border-blue-500/30 text-blue-400">
+            <i class="fa-solid fa-link mr-1"></i> TON Connected
+        </div>
+    </div>
+
+    <div class="card p-6 mb-6 text-center shadow-xl border border-white/5 bg-gradient-to-br from-blue-600/20 to-purple-600/20">
+        <p class="text-sm opacity-70 mb-1">Total Balance</p>
+        <h1 class="text-4xl font-black mb-2">$12,450.80</h1>
+        <p class="text-green-400 text-sm font-medium"><i class="fa-solid fa-arrow-up"></i> +5.2% (24h)</p>
+        
+        <div class="grid grid-cols-3 gap-4 mt-6">
+            <button onclick="alert('Opening Secure Deposit...')" class="flex flex-col items-center gap-2">
+                <div class="w-12 h-12 rounded-2xl bg-blue-500/20 flex items-center justify-center text-blue-400">
+                    <i class="fa-solid fa-plus text-xl"></i>
+                </div>
+                <span class="text-xs font-medium">Deposit</span>
+            </button>
+            <button onclick="alert('Withdrawal Request Sent')" class="flex flex-col items-center gap-2">
+                <div class="w-12 h-12 rounded-2xl bg-purple-500/20 flex items-center justify-center text-purple-400">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xl"></i>
+                </div>
+                <span class="text-xs font-medium">Withdraw</span>
+            </button>
+            <button onclick="alert('Market Hub Loading...')" class="flex flex-col items-center gap-2">
+                <div class="w-12 h-12 rounded-2xl bg-orange-500/20 flex items-center justify-center text-orange-400">
+                    <i class="fa-solid fa-rotate text-xl"></i>
+                </div>
+                <span class="text-xs font-medium">Swap</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="mb-6">
+        <h3 class="font-bold mb-4 flex justify-between items-center">
+            Your Assets <span class="text-xs text-blue-400">View All</span>
+        </h3>
+        <div class="space-y-3">
+            <div class="glass p-4 rounded-2xl flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-blue-400 flex items-center justify-center text-white font-bold">💎</div>
+                    <div>
+                        <p class="font-bold">TONcoin</p>
+                        <p class="text-xs opacity-50">Main Network</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <p class="font-bold">1,240 TON</p>
+                    <p class="text-xs text-green-400">$8,920.00</p>
+                </div>
+            </div>
+            <div class="glass p-4 rounded-2xl flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center text-white font-bold">T</div>
+                    <div>
+                        <p class="font-bold">USDT</p>
+                        <p class="text-xs opacity-50">Tether (TON)</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <p class="font-bold">3,530.80</p>
+                    <p class="text-xs opacity-50">$3,530.80</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card p-4 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/30">
+        <div class="flex justify-between items-center">
+            <div>
+                <p class="font-bold text-yellow-500 text-sm">Invite & Earn 15%</p>
+                <p class="text-[10px] opacity-70">Get rewards for every friend who joins.</p>
+            </div>
+            <button class="bg-yellow-500 text-black px-4 py-1.5 rounded-lg text-xs font-bold shadow-lg">Invite</button>
+        </div>
+    </div>
+
+    <div class="fixed bottom-0 left-0 right-0 glass border-t border-white/10 px-6 py-3 flex justify-between items-center z-50">
+        <button class="text-blue-500 flex flex-col items-center gap-1">
+            <i class="fa-solid fa-house"></i>
+            <span class="text-[10px]">Home</span>
+        </button>
+        <button class="opacity-40 flex flex-col items-center gap-1">
+            <i class="fa-solid fa-list-check"></i>
+            <span class="text-[10px]">Tasks</span>
+        </button>
+        <button class="opacity-40 flex flex-col items-center gap-1">
+            <i class="fa-solid fa-wallet"></i>
+            <span class="text-[10px]">Wallet</span>
+        </button>
+        <button class="opacity-40 flex flex-col items-center gap-1">
+            <i class="fa-solid fa-gear"></i>
+            <span class="text-[10px]">Settings</span>
+        </button>
+    </div>
+
+</body><script>
+    const tele = window.Telegram.WebApp;
+    tele.ready(); // Tells Telegram the app is loaded
+    tele.expand(); // Makes the app open in full screen immediately
+
+    // Bonus: Show the user's real name from Telegram
+    const userName = tele.initDataUnsafe?.user?.first_name || "Guest";
+    document.querySelector('.font-bold').innerText = userName;
+</script>
+  
+                                                                    </html>
+                                                                    
